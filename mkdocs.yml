@@ -1,0 +1,10 @@
+site_name: TotMaxim site
+site_url: https://Tot-Maxim.github.io/simple-mkdocs-site/
+theme:
+  name: material
+site_author: Maxim Maxim
+copyright: Maxim, totmaxim, 2024
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
