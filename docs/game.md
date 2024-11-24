@@ -37,7 +37,7 @@
 
         padding: 10px;
 
-        width: 500px;
+        width: 250px;
 
         font-size: 18px;
 
