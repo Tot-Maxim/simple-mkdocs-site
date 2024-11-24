@@ -1,21 +1,69 @@
-# Привет из тогосамого
-
-Visit [My GIT](https://github.com/Tot-Maxim).
-
-## Commands
-
-* - list 1
-* - list 2
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    Рыбий текст !
+# DevOps Engineer
 
 
-!!! note
-    Lorem ipsum dolor sit as;dkl;a \n
-    asddsa
-    Hellow world
-   
+## О себе
+
+Я опытный DevOps Engineer с глубокими знаниями в области автоматизации, компьютерных систем и методологий Agile. Стремлюсь к оптимизации рабочих процессов и повышению продуктивности команды.
+
+
+## Навыки
+
+- **Контейнеризация**: Docker, Kubernetes
+
+- **CI/CD**: Jenkins, GitLab CI, GitHub Actions
+
+- **Облачные технологии**: AWS, Azure, Google Cloud
+
+- **Системы управления конфигурацией**: Ansible, Terraform
+
+- **Мониторинг и логирование**: Prometheus, Grafana, ELK stack
+
+- **Скриптование и программирование**: Bash, Python, Go
+
+
+## Опыт работы
+
+
+### DevOps Engineer
+
+**Компания XYZ** (2021 - настоящее время)
+
+- Разработал и внедрил CI/CD пайплайны для автоматизации развертывания.
+
+- Оптимизировал процессы развертывания приложений, что сократило время в 2 раза.
+
+- Настроил мониторинг и оповещения для критически важных сервисов.
+
+
+### Системный администратор
+
+**Компания ABC** (2018 - 2021)
+
+- Управлял инфраструктурой серверов и сетей, обеспечивая высокую доступность.
+
+- Внедрил автоматизацию рутинных задач с помощью Ansible и скриптов на Python.
+
+- Организовал резервное копирование и восстановление данных.
+
+
+## Образование
+
+**Бакалавр программной инженерии**  
+
+Университет Примера (2014 - 2018)
+
+
+## Сертификации
+
+- AWS Certified Solutions Architect
+
+- Certified Kubernetes Administrator (CKA)
+
+- Docker Certified Associate
+
+
+## Контакты
+
+- **Email**: p.maxim.mail@yandex.ru
+
+- **GitHub**: [Visit My GIT](https://github.com/Tot-Maxim)

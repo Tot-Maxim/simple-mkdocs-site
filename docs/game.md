@@ -13,6 +13,7 @@
 
     }
 
+
     .container {
 
         max-width: 600px;
@@ -21,45 +22,59 @@
 
     }
 
+
     .game-message {
 
         margin: 20px 0;
 
     }
 
+
     .guess-form {
 
         margin: 20px 0;
 
+        display: flex; /* Используем flexbox для размещения элементов */
+
+        flex-direction: column; /* Располагаем элементы по вертикали */
+
+        align-items: center; /* Центрируем элементы по горизонтали */
+
     }
 
-   .guess-form input {
+
+    .guess-form input {
 
         padding: 10px;
 
-        width: 100px;
+        width: 100%;
+
+        max-width: 300px; /* Ограничиваем максимальную ширину до 300px */
 
         font-size: 18px;
 
-        border: 2px solid #007BFF; /* Цвет границы */
+        border: 2px solid #007BFF;
 
-        border-radius: 5px; /* Скругленные углы */
+        border-radius: 5px;
 
-        background-color: #f8f9fa; /* Цвет фона */
+        background-color: #f8f9fa;
 
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 
-        transition: border-color 0.3s; /* Плавный переход цвета границы */
+        transition: border-color 0.3s;
 
     }
+
 
     .guess-form input:focus {
 
-        border-color: #0056b3; /* Цвет границы при фокусировке */
+        border-color: #0056b3;
 
-        outline: none; /* Убираем стандартное обрамление */
+        outline: none;
 
     }
+
+
     .guess-form button {
 
         padding: 10px 20px;
@@ -76,9 +91,14 @@
 
         font-size: 18px;
 
+        min-width: 150px; /* Минимальная ширина кнопки */
+
+        margin: 5px; /* Отступ между кнопками */
+
         transition: background-color 0.3s; /* Плавный переход цвета фона */
 
     }
+
 
     .guess-form button:hover {
 
@@ -95,11 +115,7 @@
 
         <button type="button" id="startButton" onclick="startGame()">Начать игру</button>
 
-        <br><br>
-
         <input type="number" id="userGuess" placeholder="Ваше число" style="display:none;">
-        
-        <br><br>
 
         <button type="button" id="guessButton" style="display:none;" onclick="guessNumber()">Угадать</button>
 
