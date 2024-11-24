@@ -11,10 +11,11 @@ Visit [My GIT](https://github.com/Tot-Maxim).
 
 ## Project layout
 
-    Рыбий текст
+    Рыбий текст !
 
 
 !!! note
     Lorem ipsum dolor sit as;dkl;a \n
-    asddsa 
+    asddsa
     Hellow world
+   
