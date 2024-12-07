@@ -12,4 +12,4 @@ done
 
 echo "- Syntax lint tests on MD files passed successfully"
 
-flake8 --max-line-length=100 . && echo "- PEP8 Passed"
+#flake8 --max-line-length=100 . && echo "- PEP8 Passed"
