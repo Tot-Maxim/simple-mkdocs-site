@@ -1,5 +1,5 @@
 site_name: TotMaxim site
-site_url: https://Tot-Maxim.github.io/simple-mkdocs-site/
+site_url: http://127.0.0.1:8000/simple-mkdocs-site/shell/
 theme:
   name: material
   palette:
@@ -8,9 +8,10 @@ theme:
       icon: material/moon
       name: Switch to dark mode
 nav:
-  - Игра: game.md
   - Не игра: shell.md
-  
+  - Игра: game.md
+  - CICD: CICD/cicd.md
+
 site_author: Maxim Maxim
 copyright: Maxim, totmaxim, 2024
 markdown_extensions:
