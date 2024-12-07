@@ -1,20 +1,45 @@
-site_name: TotMaxim site
-site_url: http://127.0.0.1:8000/simple-mkdocs-site/shell/
+site_name: DevOps TotMaxim
+site_url: http://127.0.0.1:8000/simple-mkdocs-site
+plugins:
+  - search
 theme:
+  language: ru
   name: material
+  logo: assets/logo.png
   palette:
-    scheme: default
+    primary: black
+    media: "(prefers-color-scheme: dark)"
+    scheme: slate
     toggle:
-      icon: material/moon
-      name: Switch to dark mode
+      icon: material/brightness-7
+      name: Switch to light mode
+    accent: teal
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+
 nav:
-  - Не игра: shell.md
-  - Игра: game.md
-  - CICD: CICD/cicd.md
+  - Это я: CV.md
+  - Если скучно: game.md
+  - Немного теории: index.md
 
 site_author: Maxim Maxim
 copyright: Maxim, totmaxim, 2024
+
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+
+extra_css:
+- stylesheets/extra.css
+
+extra:
+  alternate:
+    - name: English
+      link: /simple-mkdocs-site/ 
+      lang: en
+    - name: Russian
+      link: /simple-mkdocs-site/
+      lang: ru

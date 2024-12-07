@@ -3,75 +3,35 @@
 
 <style>
 
-    body {
-
-        font-family: Arial, sans-serif;
-
-        text-align: center;
-
-        margin-top: 50px;
-
-    }
-
-
-    .container {
-
-        max-width: 600px;
-
-        margin: 0 auto;
-
-    }
-
-
     .game-message {
-
         margin: 20px 0;
-
     }
-
 
     .guess-form {
-
         margin: 20px 0;
-
         display: flex; /* Используем flexbox для размещения элементов */
-
         flex-direction: column; /* Располагаем элементы по вертикали */
-
         align-items: center; /* Центрируем элементы по горизонтали */
-
     }
 
 
     .guess-form input {
-
         padding: 10px;
-
         width: 100%;
-
-        max-width: 300px; /* Ограничиваем максимальную ширину до 300px */
-
+        max-width: 300px;
         font-size: 18px;
-
         border: 2px solid #007BFF;
-
         border-radius: 5px;
-
         background-color: #f8f9fa;
-
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-
         transition: border-color 0.3s;
-
     }
 
 
     .guess-form input:focus {
 
         border-color: #0056b3;
-
         outline: none;
-
     }
 
 
