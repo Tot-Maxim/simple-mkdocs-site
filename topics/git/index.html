@@ -1,0 +1,900 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Maxim Maxim">
+      
+      
+        <link rel="canonical" href="http://127.0.0.1:8000/simple-mkdocs-site/topics/git/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+    
+    
+      
+        <title>Git - DevOps TotMaxim</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="DevOps TotMaxim" class="md-header__button md-logo" aria-label="DevOps TotMaxim" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DevOps TotMaxim
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Git
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Выберите язык">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/simple-mkdocs-site/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/simple-mkdocs-site/" hreflang="ru" class="md-select__link">
+              Russian
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../CV/" class="md-tabs__link">
+        
+  
+    
+  
+  Это я
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../game/" class="md-tabs__link">
+        
+  
+    
+  
+  Если скучно
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Немного теории
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DevOps TotMaxim" class="md-nav__button md-logo" aria-label="DevOps TotMaxim" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    DevOps TotMaxim
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CV/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Это я
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Если скучно
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Немного теории
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Назад к оглавлению
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Оглавление
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Основы Git
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Сценарии
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ветки
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Слияние
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Перенос
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ссылки
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git Diff
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Внутренности Git
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Внутренности Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Назад к оглавлению
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Git</h1>
+
+<h3 id="_1"><a href="../../">Назад к оглавлению</a></h3>
+<h2 id="git"><a href="https://git-scm.com/docs/git">Git</a></h2>
+<h2 id="_2">Оглавление</h2>
+<ol>
+<li><a href="#основы-git">Основы Git</a></li>
+<li><a href="#сценарии">Сценарии</a></li>
+<li><a href="#ветки">Ветки</a></li>
+<li><a href="#слияние">Слияние</a></li>
+<li><a href="#перенос">Перенос</a></li>
+<li><a href="#общие-вопросы">Общие вопросы</a></li>
+<li><a href="#ссылки">Ссылки</a></li>
+<li><a href="#git-diff">Git Diff</a></li>
+<li><a href="#внутренности-git">Внутренности Git</a></li>
+</ol>
+<h2 id="git_1">Основы Git</h2>
+<details>
+<summary>Как узнать, является ли определенная директория репозиторием git?</summary><br><b>
+Вы можете проверить наличие директории ".git".
+</b></details>
+
+<details>
+<summary>Объясните следующее: <code>git directory</code>, <code>working directory</code> и <code>staging area</code></summary><br>
+<b>
+
+Этот ответ взят из [git-scm.com](https://git-scm.com/book/en/v1/Getting-Started-Git-Basics#_the_three_states)
+
+"Git-репозиторий — это место, где Git хранит метаданные и базу объектов для вашего проекта. Это самая важная часть Git, и именно она копируется, когда вы клонируете репозиторий с другого компьютера.
+
+Рабочая директория — это одна версия проекта, которую вы извлекли из базы данных в Git-репозитории. Эти файлы извлекаются из сжатой базы данных в директории Git и помещаются на диск для вашего использования или изменения.
+
+Область подготовки — это простой файл, который обычно находится в вашем Git-репозитории и хранит информацию о том, что будет включено в ваш следующий коммит. Иногда его называют индексом, но становится стандартом называть его областью подготовки."
+</b></details>
+
+<details>
+<summary>В чем разница между <code>git pull</code> и <code>git fetch</code>?</summary><br><b>
+
+Кратко, git pull = git fetch + git merge.
+
+Когда вы запускаете git pull, он получает все изменения из удаленного или центрального репозитория и прикрепляет их к соответствующей ветке в вашем локальном репозитории.
+
+git fetch получает все изменения из удаленного репозитория, хранит их в отдельной ветке в вашем локальном репозитории.
+</b></details>
+
+<details>
+<summary>Как проверить, отслеживается ли файл и, если нет, то начать его отслеживание?</summary><br><b>
+
+Существует несколько способов проверить, отслеживается ли файл или нет:
+  - `git ls-files <file>` -> код выхода 0 означает, что он отслеживается
+  - `git blame <file>`
+  ...
+</b></details>
+
+<details>
+<summary>Объясните, для чего используется файл <code>gitignore</code></summary><br><b>
+Цель файлов <code>gitignore</code> — убедиться, что определенные файлы, не отслеживаемые Git, остаются вне отслеживания. Чтобы перестать отслеживать файл, который в настоящее время отслеживается, используйте команду git rm --cached.
+</b></details>
+
+<details>
+<summary>Как вы можете увидеть, какие изменения были внесены до их коммита?</summary><br><b>
+`git diff`
+</b></details>
+
+<details>
+<summary>Что делает <code>git status</code>?</summary><br><b>
+
+`git status` помогает вам понять статус отслеживания файлов в вашем репозитории. Скрупулезно по рабочей директории и области подготовки — вы можете узнать, какие изменения были внесены в рабочую директорию, какие изменения находятся в области подготовки и, в общем, отслеживаются ли файлы или нет.
+</b></details>
+
+<details>
+<summary>Вы создали новые файлы в своем репозитории. Как убедиться, что Git отслеживает их?</summary><br><b>
+
+`git add FILES`
+</b></details>
+
+<h2 id="_3">Сценарии</h2>
+<details>
+<summary>У вас есть файлы в вашем репозитории, которые вы не хотите, чтобы Git когда-либо отслеживал. Что вам следует сделать, чтобы избежать их отслеживания?</summary><br><b>
+
+Добавьте их в файл `.gitignore`. Это гарантирует, что эти файлы никогда не будут добавлены в область подготовки.
+</b></details>
+
+<details>
+<summary>В вашей организации команда разработчиков использует монорепозиторий, и он стал довольно большим, включая сотни тысяч файлов. Они говорят, что выполнение многих операций git занимает много времени (например, git status). Почему это происходит и что вы можете сделать, чтобы помочь им?</summary><br><b>
+
+Многие операции Git связаны с состоянием файловой системы. Например, `git status` будет выполнять сравнения для сопоставления коммита HEAD с индексом и другого сравнения для сопоставления индекса с рабочей директорией. Как часть этих сравнений он будет выполнять довольно много вызовов `lstat()`. При работе с сотнями тысяч файлов это может занять секунды, если не минуты.
+
+Одним из решений было бы использовать встроенный `fsmonitor` (монитор файловой системы) Git. С fsmonitor (который интегрируется с Watchman) Git запускает демон, который будет постоянно следить за любыми изменениями в рабочей директории вашего репозитория и кэшировать их. Таким образом, когда вы запускаете `git status`, вместо сканирования рабочей директории вы используете кэшированное состояние вашего индекса.
+
+<p align="center">
+<img src="images/design/development/git_fsmonitor.png"/>
+</p>
+
+Далее вы можете попробовать включить `feature.manyFile` с помощью `git config feature.manyFiles true`. Это делает две вещи:
+
+1. Устанавливает `index.version = 4`, что включает сжатие префикса пути в индексе.
+2. Устанавливает `core.untrackedCache=true`, которое по умолчанию установлено на `keep`. Ненаблюдаемый кэш является весьма важной концепцией. Он записывает время модификации всех файлов и директорий в рабочей директории. Таким образом, когда приходит время перебрать все файлы и директорий, он может пропустить те, у которых время модификации не было обновлено.
+
+Перед тем как включить его, вы можете выполнить `git update-index --test-untracked-cache`, чтобы протестировать его и убедиться, что время модификации актуально в вашей системе.
+
+У Git также есть встроенная команда `git-maintainence`, которая оптимизирует репозиторий Git, чтобы команды, такие как `git add` или `git fetch`, работали быстрее, и сам репозиторий занимал меньше места на диске. Рекомендуется периодически запускать эту команду (например, каждый день).
+
+Кроме того, отслеживайте только то, что используется/изменяется разработчиками - в некоторых репозиториях могут быть сгенерированные файлы, которые необходимы для нормальной работы проекта (или поддерживают определенные опции доступности), но не изменяются разработчиками. В таком случае их отслеживать нецелесообразно.
+Чтобы избежать заполнения этих файлов в рабочей директории, можно использовать функцию `sparse checkout` Git.
+
+Наконец, с определенными системами сборки вы можете знать, какие файлы используются/имеют отношение к конкретному компоненту проекта, над которым работает разработчик. Это, в сочетании с `sparse checkout`, может привести к ситуации, когда только небольшая часть файлов заполняется в рабочей директории. Это делает команды, такие как `git add`, `git status`, и т. д. действительно быстрыми.
+</b></details>
+
+<h2 id="_4">Ветки</h2>
+<details>
+<summary>Какова стратегия ветвления (flow), которую вы знаете?</summary><br><b>
+
+- Git flow
+- GitHub flow
+- Разработка на основе trunk
+- GitLab flow
+
+[Объяснение](https://www.bmc.com/blogs/devops-branching-strategies/#:~:text=What%20is%20a%20branching%20strategy,used%20in%20the%20development%20process).
+</b></details>
+
+<details>
+<summary>Истинно или ложно? Ветка — это в основном простой указатель или ссылка на вершину определенной ветки разработки.</summary><br><b>
+
+Истинно.
+</b></details>
+
+<details>
+<summary>У вас есть две ветки - main и devel. Как убедиться, что devel синхронизирована с main?</summary><br><b>
+<code>
+<div class="highlight"><pre><span></span><code>git checkout main
+git pull
+git checkout devel
+git merge main
+</code></pre></div>
+</code>
+</b></details>
+
+<details>
+<summary>Кратко опишите, что происходит за кулисами, когда вы запускаете <code>git branch <BRANCH></code></summary><br><b>
+
+Git выполняет update-ref, чтобы добавить SHA-1 последнего коммита ветки, над которой вы находитесь, в новую ветку, которую вы хотите создать.
+</b></details>
+
+<details>
+<summary>Когда вы запускаете <code>git branch <BRANCH></code>, как Git знает SHA-1 последнего коммита?</summary><br><b>
+
+Используя файл HEAD: `.git/HEAD`.
+</b></details>
+
+<details>
+<summary>Что означает <code>unstaged</code> в контексте Git?</summary><br><b>
+
+Файл, который находится в рабочей директории, но не находится в HEAD и не в области подготовки, называется "unstaged".
+</b></details>
+
+<details>
+<summary>Истинно или ложно? Когда вы <code>git checkout some_branch</code>, Git обновляет .git/HEAD на <code>/refs/heads/some_branch</code></summary><br><b>
+
+Истинно.
+</b></details>
+
+<h2 id="_5">Слияние</h2>
+<details>
+<summary>У вас есть две ветки - main и devel. Как вы объединяете devel в main?</summary><br><b>
+
+<div class="highlight"><pre><span></span><code>git checkout main
+git merge devel
+git push origin main
+</code></pre></div>
+</b></details>
+
+<details>
+<summary>Как разрешить конфликты при слиянии git?</summary><br><b>
+
+<p>
+Сначала вы открываете файлы, которые находятся в конфликте, и определяете, в чем заключаются конфликты.
+Затем, в зависимости от того, что принято в вашей компании или команде, вы либо обсуждаете конфликты с коллегами, либо разрешаете их самостоятельно.
+После разрешения конфликтов, вы добавляете файлы с помощью `git add <file_name>`.
+Наконец, вы выполняете `git rebase --continue`.
+</p>
+</b></details>
+
+<details>
+<summary>С какими стратегиями слияния вы знакомы?</summary><br><b>
+
+Достаточно упомянуть две или три, и, вероятно, хорошо сказать, что "recursive" является стратегией по умолчанию.
+
+recursive
+resolve
+ours
+theirs
+
+Эта страница объясняет это лучше всего: https://git-scm.com/docs/merge-strategies
+</b></details>
+
+<details>
+<summary>Объясните слияние Octopus в Git</summary><br><b>
+
+Вероятно, хорошо упомянуть, что это:
+
+- Отлично подходит для случаев слияния более чем одной ветки (и также по умолчанию для таких случаев)
+- Предназначено в основном для объединения тематических веток вместе
+
+Это отличная статья о слиянии Octopus: http://www.freblogg.com/2016/12/git-octopus-merge.html
+</b></details>
+
+<details>
+<summary>В чем разница между <code>git reset</code> и <code>git revert</code>?</summary><br><b>
+
+<p>
+
+`git revert` создает новый коммит, который отменяет изменения из последнего коммита.
+
+`git reset` в зависимости от использования может изменить индекс или изменить коммит, на который указывает HEAD ветки.
+</p>
+</b></details>
+
+<h2 id="_6">Перенос</h2>
+<details>
+<summary>Вы хотите переместить коммит вперед на вершину. Как вы этого добьетесь?</summary><br><b>
+
+С помощью команды `git rebase`.
+</b></details>
+
+<details>
+<summary>В каких ситуациях вы используете <code>git rebase</code>?</summary><br><b>
+Предположим, команда работает над веткой `feature`, которая происходит от основной ветки репозитория. В момент, когда разработка функции завершена, и мы, наконец, желаем объединить ветку функции в основную ветку, не сохраняя историю коммитов, сделанных в ветке функции, `git rebase` будет полезен. 
+</b></details>
+
+<details>
+<summary>Как вернуть конкретный файл к предыдущему коммиту?</summary><br><b>
+
+<div class="highlight"><pre><span></span><code>git checkout HEAD~1 -- /path/of/the/file
+</code></pre></div>
+</b></details>
+
+<details>
+<summary>Как объединить последние два коммита?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Что такое директория <code>.git</code>? Что вы можете там найти?</summary><br><b>
+    Директория <code>.git</code> содержит всю информацию, необходимую для контроля версий вашего проекта, а также всю информацию о коммитах, адресах удаленных репозиториев и т. д. Все они присутствуют в этой папке. Она также содержит журнал, который хранит вашу историю коммитов, чтобы вы могли вернуться к предыдущим версиям.
+
+Эта информация скопирована с [https://stackoverflow.com/questions/29217859/what-is-the-git-folder](https://stackoverflow.com/questions/29217859/what-is-the-git-folder).
+</b></details>
+
+<details>
+<summary>Каковы некоторые антипаттерны Git? То, что следует избегать</summary><br><b>
+
+- Не ждать слишком долго между коммитами
+- Не удалять директорию .git :)
+</b></details>
+
+<details>
+<summary>Как удалить удаленную ветку?</summary><br><b>
+
+Вы удаляете удаленную ветку с помощью следующего синтаксиса:
+
+git push origin :[branch_name]
+</b></details>
+
+<details>
+<summary>Знакомы ли вы с gitattributes? Когда вы бы их использовали?</summary><br><b>
+
+gitattributes позволяют вам определять атрибуты по имени пути или паттерну пути.<br>
+
+Вы можете использовать их, например, чтобы контролировать символы окончания строк в файлах. В системах Windows и Unix используются разные символы для новых строк (\r\n и \n соответственно). Используя gitattributes, мы можем согласовать это для Windows и Unix с помощью `* text=auto` в .gitattributes для всех, кто работает с git. Таким образом, если вы используете проект Git в Windows, вы получите \r\n, а если вы используете Unix или Linux, вы получите \n.
+</b></details>
+
+<details>
+<summary>Как отменить изменения локального файла? (до коммита)</summary><br><b>
+
+`git checkout -- <file_name>`
+</b></details>
+
+<details>
+<summary>Как отменить локальные коммиты?</summary><br><b>
+
+`git reset HEAD~1` для удаления последнего коммита.
+Если вы также хотите отменить изменения, то используйте `git reset --hard`.
+</b></details>
+
+<details>
+<summary>Истинно или ложно? Чтобы удалить файл из git, но не из файловой системы, следует использовать <code>git rm </code></summary><br><b>
+
+Ложно. Если вы хотите сохранить файл в файловой системе, используйте `git reset <file_name>`.
+</b></details>
+
+<h2 id="_7">Ссылки</h2>
+<details>
+<summary>Как перечислить текущие ссылки git в данном репозитории? </summary><br><b>
+
+`find .git/refs/`
+</b></details>
+
+<h2 id="git-diff">Git Diff</h2>
+<details>
+<summary>Что делает git diff?</summary><br><b>
+
+git diff может сравнивать два коммита, два файла, дерево и область подготовки и т. д.
+</b></details>
+
+<details>
+<summary>Что быстрее? <code>git diff-index HEAD</code> или <code>git diff HEAD</code> </summary><br><b>
+
+`git diff-index` быстрее, но, чтобы быть честным, это потому, что он делает меньше. `git diff index` не будет смотреть на содержимое, а только на метаданные, такие как метки времени.
+</b></details>
+
+<details>
+<summary>Какие другие команды Git использует git diff?</summary><br><b>
+
+Механизм разницы используется командой `git status`, чтобы произвести сравнение и сообщить пользователю, какие файлы отслеживаются.
+</b></details>
+
+<h2 id="git_2">Внутренности Git</h2>
+<details>
+<summary>Опишите, как работает <code>git status</code></summary><br><b>
+
+Кратко, он выполняет `git diff` дважды:
+
+1. Сравнение между HEAD и областью подготовки
+2. Сравнение области подготовки и рабочей директории
+   </b></details>
+
+<details>
+<summary>Если <code>git status</code> должен выполнить разницу по всем файлам в коммите HEAD с теми, что в области подготовки/индексе, а также другую разницу между областью подготовки/индексом и рабочей директорией, как это выполняется довольно быстро? </summary><br><b>
+
+Одна из причин заключается в структуре индекса, коммитов и т. д.
+
+- Каждый файл в коммите хранится в объекте дерева.
+- Индекс затем представляет собой упрощенную структуру объектов дерева.
+- Все файлы в индексе имеют заранее рассчитанные хеши.
+- Операция разности, таким образом, сравнивает хеши.
+
+Еще одной причиной является кэширование.
+
+- Индекс кэширует информацию о рабочей директории.
+- Когда Git имеет информацию о конкретном файле в кэше, нет необходимости заглядывать в файл рабочей директории.
+</b></details>
+
+<h3 id="_8"><a href="../../">Назад к оглавлению</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Maxim, totmaxim, 2024
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

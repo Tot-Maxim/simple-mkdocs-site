@@ -1,0 +1,27 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: justify;
+    font-size: 18px;
+  }
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff; 
+}
+a {
+    color: #ffffff; 
+}
+a:hover {
+    color: #6e6e6e; 
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
+  }

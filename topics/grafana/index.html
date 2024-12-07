@@ -1,0 +1,781 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Maxim Maxim">
+      
+      
+        <link rel="canonical" href="http://127.0.0.1:8000/simple-mkdocs-site/topics/grafana/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+    
+    
+      
+        <title>Grafana - DevOps TotMaxim</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="DevOps TotMaxim" class="md-header__button md-logo" aria-label="DevOps TotMaxim" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DevOps TotMaxim
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Grafana
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Выберите язык">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/simple-mkdocs-site/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/simple-mkdocs-site/" hreflang="ru" class="md-select__link">
+              Russian
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../CV/" class="md-tabs__link">
+        
+  
+    
+  
+  Это я
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../game/" class="md-tabs__link">
+        
+  
+    
+  
+  Если скучно
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Немного теории
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DevOps TotMaxim" class="md-nav__button md-logo" aria-label="DevOps TotMaxim" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    DevOps TotMaxim
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CV/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Это я
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Если скучно
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Немного теории
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Назад к оглавлению
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grafana
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Grafana">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Оглавление
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Что такое Grafana?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      Что такое Grafana Cloud?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana-enterprise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Что такое Grafana Enterprise?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Какой порт HTTP по умолчанию у Grafana?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#https" class="md-nav__link">
+    <span class="md-ellipsis">
+      Как обеспечить работу по HTTPS?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Как установить плагины для Grafana?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Что такое «Источник данных»?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Что такое "Конфигурация по умолчанию"?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Как добавить пользовательскую конфигурацию в Grafana?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Какая внешняя аутентификация поддерживается из коробки?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Как импортировать панель в экземпляр Grafana?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Каков формат данных для панели?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Как поделиться панелью с командой?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafana_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Как организовать свои панели и пользователей в Grafana?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Как создать «Уведомление»?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Как создать «Уведомление»?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Назад к оглавлению
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h3 id="_1"><a href="../../">Назад к оглавлению</a></h3>
+<h1 id="grafana"><a href="https://grafana.com/docs/grafana/latest/">Grafana</a></h1>
+<h2 id="_2">Оглавление</h2>
+<ol>
+<li><a href="#Что-такое-grafana">Что такое Grafana?</a></li>
+<li><a href="#Что-такое-grafana-cloud">Что такое Grafana Cloud?</a></li>
+<li><a href="#Что-такое-grafana-enterprise">Что такое Grafana Enterprise?</a></li>
+<li><a href="#Какой-порт-http-по-умолчанию-у-grafana">Какой порт HTTP по умолчанию у Grafana?</a></li>
+<li><a href="#Как-обеспечить-работу-по-https">Как обеспечить работу по HTTPS?</a></li>
+<li><a href="#Как-установить-плагины-для-grafana">Как установить плагины для Grafana?</a></li>
+<li><a href="#Что-такое-Источник-данных">Что такое «Источник данных»?</a></li>
+<li><a href="#Что-такое-конфигурация-по-умолчанию">Что такое "Конфигурация по умолчанию"?</a></li>
+<li><a href="#Как-добавить-пользовательскую-конфигурацию-в-grafana">Как добавить пользовательскую конфигурацию в Grafana?</a></li>
+<li><a href="#Какая-внешняя-аутентификация-поддерживается-из-коробки">Какая внешняя аутентификация поддерживается из коробки?</a></li>
+<li><a href="#Как-импортировать-панель-в-экземпляр-grafana">Как импортировать панель в экземпляр Grafana?</a></li>
+<li><a href="#Каков-формат-данных-для-панели">Каков формат данных для панели?</a></li>
+<li><a href="#Как-поделиться-панелью-с-командой">Как поделиться панелью с командой?</a></li>
+<li><a href="#Как-организовать-свои-панели-и-пользователей-в-grafana">Как организовать свои панели и пользователей в Grafana?</a></li>
+<li><a href="#Как-создать-Уведомление">Как создать «Уведомление»?</a></li>
+</ol>
+<h2 id="grafana_1">Что такое Grafana?</h2>
+<details>
+<summary>Объясните, что такое Grafana</summary><br><b>
+
+[Документация Grafana](https://grafana.com/docs/grafana/latest/introduction): "Grafana — это полноценный стек наблюдаемости, который позволяет вам мониторить и анализировать метрики, логи и трассировки. Он позволяет вам выполнять запросы, визуализировать, получать оповещения и понимать ваши данные независимо от того, где они хранятся. Создавайте, изучайте и делитесь красивыми панелями с вашей командой и способствуйте культуре, основанной на данных."
+</b></details>
+
+<h2 id="grafana-cloud">Что такое Grafana Cloud?</h2>
+<details>
+<summary>Что такое Grafana Cloud?</summary><br><b>
+
+[Grafana Cloud](https://grafana.com/products/cloud/) — это версия Grafana, предлагаемая как услуга через облако. Стек наблюдаемости настраивается, управляется и поддерживается Grafana Labs и предлагает как бесплатные, так и платные опции. Вы также можете отправлять данные из существующих источников данных, например, Prometheus, Loki, и визуализировать существующие временные ряды.
+</b></details>
+
+<h2 id="grafana-enterprise">Что такое Grafana Enterprise?</h2>
+<details>
+<summary>Что такое Grafana Enterprise?</summary><br><b>
+
+[Grafana Enterprise](https://grafana.com/docs/grafana/latest/enterprise/#enterprise-plugins) — это коммерческая версия Grafana с корпоративными функциями, такими как плагины источников данных для предприятий и встроенные функции совместной работы. Это издание включает в себя полную поддержку и обучение от команды Grafana.
+</b></details>
+
+<h2 id="http-grafana">Какой порт HTTP по умолчанию у Grafana?</h2>
+<details>
+<summary>Какой порт HTTP по умолчанию у Grafana?</summary><br><b>
+
+[Инструкция по началу работы с Grafana](https://grafana.com/docs/grafana/latest/getting-started/getting-started/): Grafana работает на порту 3000 по умолчанию.
+</b></details>
+
+<h2 id="https">Как обеспечить работу по HTTPS?</h2>
+<details>
+<summary>Объясните, как мы можем обеспечить работу по HTTPS</summary><br><b>
+
+[Сообщество Grafana](https://grafana.com/docs/grafana/latest/getting-started/getting-started/): Установите протокол на _https_ в настройках конфигурации, тогда Grafana будет ожидать, что клиенты будут отправлять запросы, используя протокол HTTPS. Любой клиент, использующий HTTP, получит ошибку SSL/TLS.
+</b></details>
+
+<h2 id="grafana_2">Как установить плагины для Grafana?</h2>
+<details>
+<summary>Как мы можем установить плагины для Grafana?</summary><br><b>
+
+[Инструкция по началу работы с Grafana](https://grafana.com/docs/grafana/latest/plugins/installation/): Перейдите на [страницу плагинов Grafana](https://grafana.com/grafana/plugins/), найдите нужный плагин и кликните на него, затем перейдите на вкладку установки. Есть два способа установки в зависимости от того, где работает ваш сервер Grafana:
+- Облако: В поле **Для** на вкладке установки выберите название организации, на которую хотите установить плагин (если вы не принадлежите только к одной), затем нажмите **установить плагин**. Grafana Cloud автоматически установит плагин на ваш экземпляр Grafana, вам, возможно, придется выйти и снова войти, чтобы увидеть плагин.
+- Локальная Grafana: Вы можете использовать Grafana CLI, который позволяет вам перечислять доступные плагины и устанавливать их.
+<div class="highlight"><pre><span></span><code>grafana-cli plugins list-remote
+grafana-cli plugins install &lt;plugin-id&gt;
+</code></pre></div>
+Вы также можете установить пакетный плагин, скачав ассет из вкладки установки, а затем разархивировав архив в директорию плагина. Путь к директории плагина можно увидеть в конфигурационном файле 
+ <div class="highlight"><pre><span></span><code>unzip my-plugin-0.2.0.zip -d YOUR_PLUGIN_DIR/my-plugin
+</code></pre></div>
+</b></details>
+
+<h2 id="_3">Что такое «Источник данных»?</h2>
+<details>
+<summary>Объясните, что такое «Источник данных»</summary><br><b>
+
+[Документация Grafana](https://grafana.com/docs/grafana/latest/datasources/): Источник данных — это бэкэнд хранения, который служит источником данных для Grafana. Некоторые популярные источники данных: Prometheus, InfluxDB, Loki, AWS CloudWatch.
+</b></details>
+
+<h2 id="_4">Что такое "Конфигурация по умолчанию"?</h2>
+<details>
+<summary>Что такое "Конфигурация по умолчанию"?</summary><br><b>
+
+[Документация Grafana](https://grafana.com/docs/grafana/latest/administration/configuration/): Конфигурация по умолчанию содержит настройки, которые Grafana использует по умолчанию. Местоположение зависит от ОС: 
+- Windows: ```$WORKING_DIR/conf/defaults.ini```
+- Linux: ```/etc/grafana/grafana.ini```
+- macOS: ```/usr/local/etc/grafana/grafana.ini```
+</b></details>
+
+<h2 id="grafana_3">Как добавить пользовательскую конфигурацию в Grafana?</h2>
+<details>
+<summary>Объясните, как мы можем добавить пользовательскую конфигурацию в Grafana</summary><br><b>
+
+[Документация Grafana](https://grafana.com/docs/grafana/latest/administration/configuration/): 
+Пользовательская конфигурация может быть настроена либо путем изменения файла пользовательской конфигурации, либо добавлением переменных окружения, которые переопределяют конфигурацию по умолчанию. Конфигурация различается в зависимости от ОС:
+- Windows: В той же директории, что и файл defaults.ini, есть файл ```sample.ini```, скопируйте sample.ini и назовите его «custom.ini». Уберите закомментирование настроек, которые вы хотите переопределить.
+- Linux: Отредактируйте конфигурационный файл по адресу ```/etc/grafana/grafana.ini```.
+- macOS: Добавьте конфигурационный файл с именем ```custom.ini``` в папку conf. Если вы установили Grafana с помощью Homebrew, вы можете вручную отредактировать ```conf/defaults.ini```.
+- Docker: Вы можете переопределить существующую конфигурацию в Grafana с помощью переменных окружения. Пример — установка имени экземпляра Grafana: ```E.g. export GF_DEFAULT_INSTANCE_NAME=my-instance```
+</b></details>
+
+<h2 id="_5">Какая внешняя аутентификация поддерживается из коробки?</h2>
+<details>
+<summary>Какая внешняя аутентификация поддерживается из коробки?</summary><br><b>
+
+[Документация Grafana](https://grafana.com/docs/grafana/latest/auth/overview/): Grafana Auth — это встроенная система аутентификации с включенной аутентификацией по паролю по умолчанию.
+</b></details>
+
+<h2 id="grafana_4">Как импортировать панель в экземпляр Grafana?</h2>
+<details>
+<summary>Как мы можем импортировать панель в экземпляр Grafana?</summary><br><b>
+
+[Инструкция по началу работы с Grafana](https://grafana.com/docs/grafana/latest/dashboards/export-import/): Панели Grafana можно импортировать через интерфейс Grafana. Нажмите на иконку + в боковой панели, а затем нажмите «Импорт». Вы можете импортировать панель через следующие опции:
+- Загрузив JSON файл панели, который был экспортирован из интерфейса Grafana или получен через [HTTPS API](https://grafana.com/docs/grafana/latest/http_api/dashboard/#create-update-dashboard)
+- Вставив URL панели Grafana, который можно найти на [Dashboards Grafana](https://grafana.com/grafana/dashboards/), или уникальный ID панели в текстовую область.
+- Вставив необработанный текст JSON панели в область панели.
+Нажмите «Загрузить» после этого.
+</b></details>
+
+<h2 id="_6">Каков формат данных для панели?</h2>
+<details>
+<summary>Каков формат данных для панели?</summary><br><b>
+
+[Документация Grafana](https://grafana.com/docs/grafana/latest/dashboards/json-model/): Панели Grafana представлены в виде JSON файлов как объекты, они хранят метаданные о панели, например, свойства панели, метаданные панели и переменные.
+</b></details>
+
+<h2 id="_7">Как поделиться панелью с командой?</h2>
+<details>
+<summary>Объясните шаги, чтобы поделиться вашей панелью с командой</summary><br><b>
+
+[Документация Grafana](https://grafana.com/docs/grafana/latest/sharing/share-dashboard/): Перейдите на домашнюю страницу вашего экземпляра Grafana. Нажмите на иконку «Поделиться» в верхней навигации, после чего будут видны три вкладки с вкладкой «Ссылка». 
+- Прямая ссылка: Нажмите «Копировать», отправьте ссылку пользователю Grafana, обратите внимание, что пользователю нужна авторизация для просмотра этой ссылки. Это делается путем добавления пользователя в команду.
+- Публичный снимок: Нажмите на локальный снимок, чтобы опубликовать снимок на локальном экземпляре Grafana, или опубликуйте на snapshots.raintank.io, что является бесплатной службой для публикации снимков панелей на внешнем экземпляре Grafana. Вы можете настроить срок действия снимков по истечении определенного времени и значение таймаута для сбора метрик панели.
+</b></details>
+
+<h2 id="grafana_5">Как организовать свои панели и пользователей в Grafana?</h2>
+<details>
+<summary>Как вы можете организовать свои панели и пользователей в Grafana?</summary><br><b>
+
+[Документация Grafana](https://grafana.com/blog/2022/03/14/how-to-best-organize-your-teams-and-resources-in-grafana/): Рекомендуемый способ от Grafana Labs — это создание папок для группировки панелей, библиотечных панелей и оповещений. Пользователи могут быть организованы через команды, которые предоставляют разрешения членам группы.
+- [Папки](https://grafana.com/docs/grafana/latest/dashboards/dashboard_folders/): Нажмите на иконку + в боковой панели, затем нажмите «Создать папку». На странице создания папки введите уникальное имя для папки и нажмите «Создать».
+- [Команды](https://grafana.com/tutorials/create-users-and-teams/): Вы должны быть администратором сервера, чтобы создать команды.
+  1. Нажмите на иконку администратора сервера (щит) в боковой панели, затем на вкладке «Пользователи» нажмите «Новый пользователь».
+  2. Введите данные пользователя, например, имя, электронную почту, имя пользователя и пароль. Пароль может быть изменен позже пользователем.
+  3. Нажмите «Создать», чтобы создать учетную запись пользователя.
+</b></details>
+
+<h2 id="_8">Как создать «Уведомление»?</h2>
+<details>
+<summary>Объясните шаги для создания «Уведомления»</summary><br><b>
+
+[Документация Grafana](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/): 
+
+ "Перейдите к панели, для которой вы хотите добавить или изменить правило оповещения, нажмите на название, а затем нажмите «Редактировать». На вкладке «Уведомления» нажмите «Создать уведомление». Если для этой панели уже существует уведомление, вы можете просто отредактировать поля на вкладке «Уведомление». Заполните поля. Описания перечислены ниже в полях правил уведомления. Когда вы закончите писать ваше правило, нажмите «Сохранить» в верхнем правом углу, чтобы сохранить правило уведомления и панель. (Дополнительно, но рекомендуется) Нажмите «Тестировать правило», чтобы убедиться, что правило возвращает ожидаемые результаты."
+</b></details>
+
+<h3 id="_9"><a href="../../">Назад к оглавлению</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Maxim, totmaxim, 2024
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
